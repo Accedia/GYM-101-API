@@ -1,31 +1,73 @@
 [
     {
         "equipment": "Lat Pull Down Machine",
-        "exercise": "Wide Grip Lat Pulldown",
-        "mainMuscleGroup": "Back",
-        "otherMuscleGroups": [
-            "Shoulder"
-        ],
-        "videoLink": "https://www.youtube.com/watch?v=lueEJGjTuPQ"
+        "exercises": [
+            {
+                "name": "Wide Grip Lat Pulldown",
+                "mainMuscleGroup": "Back",
+                "otherMuscleGroups": [
+                    "Shoulder"
+                ],
+                "videoLink": "https://www.youtube.com/watch?v=lueEJGjTuPQ"
+            },
+            {
+                "name": "Close Grip Front Lat Pulldown",
+                "mainMuscleGroup": "Back",
+                "otherMuscleGroups": [
+                    "Biceps"
+                ],
+                "videoLink": "https://www.youtube.com/watch?v=ecRF8ERf2q4"
+            }
+        ]
     },
     {
         "equipment": "Power Tower",
-        "exercise": "Pull Up",
-        "mainMuscleGroup": "Back",
-        "otherMuscleGroups": [
-            "Shoulder",
-            "Abs"
-        ],
-        "videoLink": "https://www.youtube.com/watch?v=WXMKjV11lAk"
+        "exercises": [
+            {
+                "name": "Pull Up",
+                "mainMuscleGroup": "Back",
+                "otherMuscleGroups": [
+                    "Shoulder",
+                    "Abs"
+                ],
+                "videoLink": "https://www.youtube.com/watch?v=WXMKjV11lAk"
+            },
+            {
+                "name": "Chin Up",
+                "mainMuscleGroup": "Back",
+                "otherMuscleGroups": [
+                    "Biceps"
+                ],
+                "videoLink": "https://www.youtube.com/watch?v=fNZ8Ty7jSFA"
+            }
+        ]
     },
     {
         "equipment": "Leg Press Machine",
-        "exercise": "Leg Press",
-        "mainMuscleGroup": "Upper Legs",
-        "otherMuscleGroups": [
-            "Lower Legs",
-            "Glutes"
-        ],
-        "videoLink": "https://www.youtube.com/watch?v=3R0SOJ3alTA"
+        "exercises": [
+            {
+                "name": "Leg Press",
+                "mainMuscleGroup": "Upper Legs",
+                "otherMuscleGroups": [
+                    "Lower Legs",
+                    "Glutes"
+                ],
+                "videoLink": "https://www.youtube.com/watch?v=3R0SOJ3alTAk"
+            }
+        ]
+    },
+    {
+        "equipment": "Bench Press",
+        "exercises": [
+            {
+                "name": "Barbell Bench Press",
+                "mainMuscleGroup": "Chest",
+                "otherMuscleGroups": [
+                    "Triceps",
+                    "Shoulders"
+                ],
+                "videoLink": "https://www.youtube.com/watch?v=esQi683XR44"
+            }
+        ]
     }
 ]
