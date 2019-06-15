@@ -1,4 +1,5 @@
 import json
+import os
 import boto3
 from boto3.dynamodb.conditions import Key
 
@@ -9,8 +10,9 @@ def get_exercises(event, context):
     equipment = queryStringParameters['equipment']
     print(equipment)
 
+    table_name = os.environ['DYNAMODB_TABLE']
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('gym101-dev')
+    table = dynamodb.Table(table_name)
 
     response = table.query(
         KeyConditionExpression=Key('equipment').eq(equipment)

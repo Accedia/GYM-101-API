@@ -3,6 +3,11 @@ service: gym101
 provider:
   name: aws
   runtime: python3.7
+  #stage: dev
+  #region: us-east-1
+  apiKeys:
+    - ${opt:stage, self:provider.stage}-myFirstKey
+    - ${opt:stage, self:provider.stage}-mySecondKey
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
@@ -10,11 +15,6 @@ provider:
       Action:
         - dynamodb:Query
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
-
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
-
 
 functions:
   getExercises:
@@ -24,6 +24,7 @@ functions:
       - http:
           path: excercises  
           method: get
+          private: true
 
 resources:
   Resources:
