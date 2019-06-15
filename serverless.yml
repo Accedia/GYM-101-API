@@ -1,0 +1,19 @@
+service: gym101
+
+provider:
+  name: aws
+  runtime: python3.7
+
+# you can overwrite defaults here
+#  stage: dev
+#  region: us-east-1
+
+
+functions:
+  get_exercises:
+    handler: src.exercises.get_exercises
+
+    events:
+      - http:
+          path: excercises  
+          method: get
