@@ -3,6 +3,13 @@ service: gym101
 provider:
   name: aws
   runtime: python3.7
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 
 # you can overwrite defaults here
 #  stage: dev
@@ -10,10 +17,29 @@ provider:
 
 
 functions:
-  get_exercises:
+  getExercises:
     handler: src.exercises.get_exercises
 
     events:
       - http:
           path: excercises  
           method: get
+
+resources:
+  Resources:
+    Gym101DynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: equipment
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: equipment
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 2
+          WriteCapacityUnits: 2
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}

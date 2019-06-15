@@ -1,15 +1,25 @@
 import json
+import boto3
+from boto3.dynamodb.conditions import Key
 
 
 def get_exercises(event, context):
-    body = {
-        "message": "Go Gym 101!",
-        "input": event
-    }
+
+    queryStringParameters = event.get('queryStringParameters', {})
+    equipment = queryStringParameters['equipment']
+    print(equipment)
+
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('gym101-dev')
+
+    response = table.query(
+        KeyConditionExpression=Key('equipment').eq(equipment)
+    )
+    items = response['Items']
 
     response = {
         "statusCode": 200,
-        "body": json.dumps(body)
+        "body": json.dumps(items)
     }
 
     return response

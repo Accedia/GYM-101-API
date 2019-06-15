@@ -1,0 +1,31 @@
+[
+    {
+        "equipment": "Lat Pull Down Machine",
+        "exercise": "Wide Grip Lat Pulldown",
+        "mainMuscleGroup": "Back",
+        "otherMuscleGroups": [
+            "Shoulder"
+        ],
+        "videoLink": "https://www.youtube.com/watch?v=lueEJGjTuPQ"
+    },
+    {
+        "equipment": "Power Tower",
+        "exercise": "Pull Up",
+        "mainMuscleGroup": "Back",
+        "otherMuscleGroups": [
+            "Shoulder",
+            "Abs"
+        ],
+        "videoLink": "https://www.youtube.com/watch?v=WXMKjV11lAk"
+    },
+    {
+        "equipment": "Leg Press Machine",
+        "exercise": "Leg Press",
+        "mainMuscleGroup": "Upper Legs",
+        "otherMuscleGroups": [
+            "Lower Legs",
+            "Glutes"
+        ],
+        "videoLink": "https://www.youtube.com/watch?v=3R0SOJ3alTA"
+    }
+]
