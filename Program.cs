@@ -13,8 +13,8 @@ namespace ImageAnalyze
     {
         private static readonly List<string> _topics = new List<string> { "" };
 
-        // subscriptionKey = "0123456789abcdef0123456789ABCDEF"
-        private const string subscriptionKey = "00cd6c91461948918fa7ab447a649354";
+        // subscriptionKey = ""
+        private const string subscriptionKey = "";
 
         //private const string remoteImageUrl =
         //    "https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg";
